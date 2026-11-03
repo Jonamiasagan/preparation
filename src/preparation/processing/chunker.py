@@ -1,7 +1,8 @@
 from pydantic.dataclasses import dataclass
 from preparation.config import settings
 import uuid
-@dataclass
+@dataclass  
+
 class chunk:
     chunk_id: str
     text: str

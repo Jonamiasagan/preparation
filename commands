@@ -1,0 +1,4 @@
+open -a docker
+docker compose up -d
+lsof -ti :8000 | xargs kill -9
+uv run uvicorn app.main:app --reload

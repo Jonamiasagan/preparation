@@ -1,0 +1,3565 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R ] /Count 8 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Page
+/Parent 2 0 R
+/MediaBox [ 0 0 612.0 792.0 ]
+/Contents 8 0 R
+/Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >>
+>>
+endobj
+8 0 obj
+<< /Length 5378 >>
+stream
+q
+0.85 0.88 0.92 RG
+0.5 w
+50.0 757.0 m 562.0 757.0 l S
+50.0 35 m 562.0 35 l S
+Q
+q
+0.5 0.55 0.6 rg
+BT
+/F1 7.5 Tf
+1 0 0 1 50.0 762.0 Tm
+(Master Blueprint: Production Hybrid RAG Engine) Tj
+ET
+BT
+/F1 7.5 Tf
+1 0 0 1 382.0 24 Tm
+(Production Hybrid RAG Engine Blueprint  |  Page 1 of 8) Tj
+ET
+Q
+q
+0.08 0.28 0.6 rg
+BT
+/F2 18 Tf
+1 0 0 1 50.0 732.0 Tm
+(Master Blueprint: Production Hybrid RAG Engine Architecture) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 710.0 Tm
+(This document is your **reusable architectural playbook**. Keep this as your blueprint whenever) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 697.0 Tm
+(you build a RAG system from scratch.) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 675.0 m
+562.0 675.0 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 657.0 Tm
+( System Map: What Each File Does) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 420.0 512.0 219.0 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 624.0 Tm
+(preparation/) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 612.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 601.0 Tm
+( docker-compose.yml                  # 1. INFRASTRUCTURE: Runs Qdrant Vector DB container) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 589.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 578.0 Tm
+( src/preparation/) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 566.5 Tm
+(    config.py                       # 2. SETTINGS: Single source of truth for hosts, ports, dims) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 555.0 Tm
+(   ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 543.5 Tm
+(    processing/) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 532.0 Tm
+(       chunker.py                  # 3. TEXT CHUNKER: Sliding-window with stride math & char offsets) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 520.5 Tm
+(       markdown_chunker.py         # 4. MARKDOWN CHUNKER: Structure-aware Buffer & Flush by # headers) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 509.0 Tm
+(       embedder.py                 # 5. EMBEDDER: Converts text to 384-dim ONNX vectors via FastEmbed) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 497.5 Tm
+(   ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 486.0 Tm
+(    storage/) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 474.5 Tm
+(        qdrant.py                   # 6. STORAGE ADAPTER: DB connection, upsert, & multi-tenant filter) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 463.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 451.5 Tm
+( app/) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 440.0 Tm
+(     schemas.py                      # 7. CONTRACTS: Pydantic models for API request/response validation) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 428.5 Tm
+(     main.py                         # 8. ORCHESTRATOR: FastAPI server connecting chunker, embedder, DB) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 407.0 m
+562.0 407.0 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 389.0 Tm
+(File 1: `docker-compose.yml` \(The Database Engine\)) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 365.0 Tm
+(Purpose) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 350.0 Tm
+(To spin up the Qdrant Vector Database in an isolated container without needing manual system) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 337.0 Tm
+(installations. It ensures data persists on your laptop's disk even if the container restarts.) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 314.0 Tm
+(Key Lines & Why We Wrote Them) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 195.0 512.0 104.0 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 284.0 Tm
+(services:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 272.5 Tm
+(  qdrant:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 261.0 Tm
+(    image: qdrant/qdrant:latest) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 249.5 Tm
+(    ports:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 238.0 Tm
+(      - "6333:6333" # Port 6333: REST API & Web Dashboard \(used by our Python client and browser UI\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 226.5 Tm
+(      - "6334:6334" # Port 6334: High-speed gRPC interface \(for ultra-low-latency production search\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 215.0 Tm
+(    volumes:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 203.5 Tm
+(      - ./qdrant_storage:/qdrant/storage # Maps container storage to local folder so vectors don't vanish on r) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 182.0 m
+562.0 182.0 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 164.0 Tm
+(File 2: `src/preparation/config.py` \(The Single Source of Truth\)) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 140.0 Tm
+(Purpose) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 125.0 Tm
+(Centralizes every magic string, port number, model name, and dimension. If your Qdrant port) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 112.0 Tm
+(changes or you switch models, you update **one line** here instead of editing 10 different) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 99.0 Tm
+(files.) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 76.0 Tm
+(Key Lines & Why We Wrote Them) Tj
+ET
+Q
+endstream
+endobj
+9 0 obj
+<< /Type /Page
+/Parent 2 0 R
+/MediaBox [ 0 0 612.0 792.0 ]
+/Contents 10 0 R
+/Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >>
+>>
+endobj
+10 0 obj
+<< /Length 5984 >>
+stream
+q
+0.85 0.88 0.92 RG
+0.5 w
+50.0 757.0 m 562.0 757.0 l S
+50.0 35 m 562.0 35 l S
+Q
+q
+0.5 0.55 0.6 rg
+BT
+/F1 7.5 Tf
+1 0 0 1 50.0 762.0 Tm
+(Master Blueprint: Production Hybrid RAG Engine) Tj
+ET
+BT
+/F1 7.5 Tf
+1 0 0 1 382.0 24 Tm
+(Production Hybrid RAG Engine Blueprint  |  Page 2 of 8) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 454.0 512.0 288.0 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 727.0 Tm
+(from pydantic_settings import BaseSettings, SettingsConfigDict) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 715.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 704.0 Tm
+(class Settings\(BaseSettings\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 692.5 Tm
+(    # Where Qdrant lives) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 681.0 Tm
+(    qdrant_host: str = "localhost") Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 669.5 Tm
+(    qdrant_port: int = 6333) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 658.0 Tm
+(    qdrant_grpc_port: int = 6334) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 646.5 Tm
+(    ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 635.0 Tm
+(    # What collection \(table\) we store vectors in) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 623.5 Tm
+(    collection_name: str = "rag_knowledge_base") Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 612.0 Tm
+(    ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 600.5 Tm
+(    # Embedding model specification \(BGE-Small produces 384-length float vectors\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 589.0 Tm
+(    embedding_model: str = "BAAI/bge-small-en-v1.5") Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 577.5 Tm
+(    embedding_dim: int = 384) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 566.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 554.5 Tm
+(    # Default chunking parameters) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 543.0 Tm
+(    chunk_size: int = 500) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 531.5 Tm
+(    chunk_overlap: int = 100) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 520.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 508.5 Tm
+(    # Reads from .env file automatically if present) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 497.0 Tm
+(    model_config = SettingsConfigDict\(env_file=".env", extra="ignore"\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 485.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 474.0 Tm
+(# Singleton Pattern: Create one instance that the entire app shares) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 462.5 Tm
+(settings = Settings\(\)) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 441.0 m
+562.0 441.0 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 423.0 Tm
+(File 3: `src/preparation/processing/chunker.py` \(Sliding Window Chunker\)) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 399.0 Tm
+(Purpose) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 384.0 Tm
+(Breaks large unstructured plain text into manageable blocks that fit into the embedding models) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 371.0 Tm
+(context limit, while using overlapping windows so sentences aren't chopped in half.) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 348.0 Tm
+(Key Lines & Why We Wrote Them) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 56.5 512.0 276.5 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 318.0 Tm
+(@dataclass) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 306.5 Tm
+(class chunk:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 295.0 Tm
+(    chunk_id: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 283.5 Tm
+(    text: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 272.0 Tm
+(    start_char: int   # Exact character where chunk starts in original document) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 260.5 Tm
+(    end_char: int     # Exact character where chunk ends in original document) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 249.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 237.5 Tm
+(class SlidingWindowChunker:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 226.0 Tm
+(    def __init__\(self, chunk_size: int | None = None, chunk_overlap: int | None = None\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 214.5 Tm
+(        self.chunk_size = chunk_size or settings.chunk_size) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 203.0 Tm
+(        self.chunk_overlap = chunk_overlap or settings.chunk_overlap) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 191.5 Tm
+(        ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 180.0 Tm
+(        # GUARD CLAUSE: Overlap cannot be >= size, or stride will be <= 0 \(infinite loop!\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 168.5 Tm
+(        if self.chunk_overlap >= self.chunk_size: ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 157.0 Tm
+(            raise ValueError\("Chunk overlap must be smaller than chunk size"\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 145.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 134.0 Tm
+(    def chunk_text\(self, text: str\) -> list[chunk]:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 122.5 Tm
+(        if not text.strip\(\): return []) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 111.0 Tm
+(        ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 99.5 Tm
+(        # Stride formula: How many characters to jump forward for the next window) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 88.0 Tm
+(        step = self.chunk_size - self.chunk_overlap) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 76.5 Tm
+(        start = 0) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 65.0 Tm
+(        chunks = []) Tj
+ET
+Q
+endstream
+endobj
+11 0 obj
+<< /Type /Page
+/Parent 2 0 R
+/MediaBox [ 0 0 612.0 792.0 ]
+/Contents 12 0 R
+/Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >>
+>>
+endobj
+12 0 obj
+<< /Length 5921 >>
+stream
+q
+0.85 0.88 0.92 RG
+0.5 w
+50.0 757.0 m 562.0 757.0 l S
+50.0 35 m 562.0 35 l S
+Q
+q
+0.5 0.55 0.6 rg
+BT
+/F1 7.5 Tf
+1 0 0 1 50.0 762.0 Tm
+(Master Blueprint: Production Hybrid RAG Engine) Tj
+ET
+BT
+/F1 7.5 Tf
+1 0 0 1 382.0 24 Tm
+(Production Hybrid RAG Engine Blueprint  |  Page 3 of 8) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 534.5 512.0 207.5 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 727.0 Tm
+(        ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 715.5 Tm
+(        while start < len\(text\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 704.0 Tm
+(            chunk_text = text[start : start + self.chunk_size]) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 692.5 Tm
+(            end_char = start + len\(chunk_text\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 681.0 Tm
+(            ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 669.5 Tm
+(            chunks.append\(chunk\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 658.0 Tm
+(                chunk_id=str\(uuid.uuid4\(\)\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 646.5 Tm
+(                text=chunk_text,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 635.0 Tm
+(                start_char=start,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 623.5 Tm
+(                end_char=end_char) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 612.0 Tm
+(            \)\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 600.5 Tm
+(            ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 589.0 Tm
+(            if end_char >= len\(text\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 577.5 Tm
+(                break # Reached the end of text) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 566.0 Tm
+(            start += step # Advance the sliding window) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 554.5 Tm
+(            ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 543.0 Tm
+(        return chunks) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 521.5 m
+562.0 521.5 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 503.5 Tm
+(File 4: `src/preparation/processing/markdown_chunker.py` \(Structure-Aware Chunker\)) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 479.5 Tm
+(Purpose) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 464.5 Tm
+(Preserves document hierarchy. Instead of arbitrarily slicing sentences, it splits by Markdown) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 451.5 Tm
+(headers \(`#`, `##`, `###`\) using the **Buffer & Flush / Accumulator pattern**, tagging each) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 438.5 Tm
+(chunk with its breadcrumb header.) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 415.5 Tm
+(Key Lines & Why We Wrote Them) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 55.0 512.0 345.5 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 385.5 Tm
+(class MarkdownChunk\(BaseModel\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 374.0 Tm
+(    chunk_id: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 362.5 Tm
+(    text: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 351.0 Tm
+(    header: str    # e.g., "Architecture" or "Multi-Tenancy") Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 339.5 Tm
+(    level: int     # Depth: 1 for #, 2 for ##, 3 for ###) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 328.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 316.5 Tm
+(class MarkdownHeaderChunker:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 305.0 Tm
+(    def chunk_markdown\(self, markdown_text: str\) -> list[MarkdownChunk]:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 293.5 Tm
+(        chunks: list[MarkdownChunk] = []) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 282.0 Tm
+(        lines = markdown_text.splitlines\(\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 270.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 259.0 Tm
+(        current_header = "Introduction") Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 247.5 Tm
+(        current_level = 1) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 236.0 Tm
+(        current_lines: list[str] = [] # The Accumulator Buffer) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 224.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 213.0 Tm
+(        # FLUSH HELPER: Packs accumulated lines into a chunk and clears the buffer) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 201.5 Tm
+(        def flush_section\(\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 190.0 Tm
+(            text_block = "\\n".join\(current_lines\).strip\(\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 178.5 Tm
+(            if not text_block: return) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 167.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 155.5 Tm
+(            # If section fits under max_size, keep it whole) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 144.0 Tm
+(            if len\(text_block\) <= self.max_chunk_size:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 132.5 Tm
+(                chunks.append\(MarkdownChunk\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 121.0 Tm
+(                    chunk_id=str\(uuid.uuid4\(\)\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 109.5 Tm
+(                    text=text_block,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 98.0 Tm
+(                    header=current_header,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 86.5 Tm
+(                    level=current_level) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 75.0 Tm
+(                \)\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 63.5 Tm
+(            else:) Tj
+ET
+Q
+endstream
+endobj
+13 0 obj
+<< /Type /Page
+/Parent 2 0 R
+/MediaBox [ 0 0 612.0 792.0 ]
+/Contents 14 0 R
+/Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >>
+>>
+endobj
+14 0 obj
+<< /Length 6052 >>
+stream
+q
+0.85 0.88 0.92 RG
+0.5 w
+50.0 757.0 m 562.0 757.0 l S
+50.0 35 m 562.0 35 l S
+Q
+q
+0.5 0.55 0.6 rg
+BT
+/F1 7.5 Tf
+1 0 0 1 50.0 762.0 Tm
+(Master Blueprint: Production Hybrid RAG Engine) Tj
+ET
+BT
+/F1 7.5 Tf
+1 0 0 1 382.0 24 Tm
+(Production Hybrid RAG Engine Blueprint  |  Page 4 of 8) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 442.5 512.0 299.5 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 727.0 Tm
+(                # If section is massive, fallback to sliding window to avoid token overflow) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 715.5 Tm
+(                for sc in self.fallback_chunker.chunk_text\(text_block\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 704.0 Tm
+(                    chunks.append\(MarkdownChunk\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 692.5 Tm
+(                        chunk_id=str\(uuid.uuid4\(\)\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 681.0 Tm
+(                        text=sc.text,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 669.5 Tm
+(                        header=current_header,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 658.0 Tm
+(                        level=current_level) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 646.5 Tm
+(                    \)\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 635.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 623.5 Tm
+(        # LOOP THROUGH LINES) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 612.0 Tm
+(        for line in lines:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 600.5 Tm
+(            stripped = line.strip\(\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 589.0 Tm
+(            if stripped.startswith\("#"\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 577.5 Tm
+(                flush_section\(\)          # 1. Flush previous accumulated section) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 566.0 Tm
+(                current_lines.clear\(\)    # 2. Reset buffer) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 554.5 Tm
+(                ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 543.0 Tm
+(                # Count consecutive '#' symbols to determine heading depth) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 531.5 Tm
+(                hash_count = len\(stripped\) - len\(stripped.lstrip\("#"\)\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 520.0 Tm
+(                current_level = hash_count) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 508.5 Tm
+(                current_header = stripped.lstrip\("#"\).strip\(\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 497.0 Tm
+(            else:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 485.5 Tm
+(                current_lines.append\(line\) # Normal paragraph line -> accumulate) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 474.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 462.5 Tm
+(        flush_section\(\) # Final flush for trailing content at end of file) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 451.0 Tm
+(        return chunks) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 429.5 m
+562.0 429.5 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 411.5 Tm
+(File 5: `src/preparation/processing/embedder.py` \(The Mathematical Vectorizer\)) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 387.5 Tm
+(Purpose) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 372.5 Tm
+(Converts raw strings into mathematical vectors \(arrays of 384 floating-point numbers\). We use a) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 359.5 Tm
+(class so the ONNX model is loaded into RAM **once** upon initialization rather than re-loaded) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 346.5 Tm
+(on every query.) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 323.5 Tm
+(Key Lines & Why We Wrote Them) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 112.5 512.0 196.0 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 293.5 Tm
+(from fastembed import TextEmbedding) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 282.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 270.5 Tm
+(class LocalEmbedder:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 259.0 Tm
+(    def __init__\(self, model_name: str | None = None\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 247.5 Tm
+(        # Loads ONNX runtime weights once in RAM \(~67MB\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 236.0 Tm
+(        self.model = TextEmbedding\(model_name=self.model_name\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 224.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 213.0 Tm
+(    def embed_chunks\(self, texts: list[str]\) -> list[list[float]]:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 201.5 Tm
+(        # FastEmbed returns a Python generator; we convert to list of float lists) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 190.0 Tm
+(        embeddings_generator = self.model.embed\(texts\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 178.5 Tm
+(        return [emb.tolist\(\) for emb in embeddings_generator]) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 167.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 155.5 Tm
+(    def embed_query\(self, query: str\) -> list[float]:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 144.0 Tm
+(        # FastEmbed has an optimized embed_query for search queries) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 132.5 Tm
+(        query_generator = self.model.embed_query\(query\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 121.0 Tm
+(        return next\(query_generator\).tolist\(\)) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 99.5 m
+562.0 99.5 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 81.5 Tm
+(File 6: `src/preparation/storage/qdrant.py` \(Database Adapter & Multi-Tenancy\)) Tj
+ET
+Q
+endstream
+endobj
+15 0 obj
+<< /Type /Page
+/Parent 2 0 R
+/MediaBox [ 0 0 612.0 792.0 ]
+/Contents 16 0 R
+/Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >>
+>>
+endobj
+16 0 obj
+<< /Length 6691 >>
+stream
+q
+0.85 0.88 0.92 RG
+0.5 w
+50.0 757.0 m 562.0 757.0 l S
+50.0 35 m 562.0 35 l S
+Q
+q
+0.5 0.55 0.6 rg
+BT
+/F1 7.5 Tf
+1 0 0 1 50.0 762.0 Tm
+(Master Blueprint: Production Hybrid RAG Engine) Tj
+ET
+BT
+/F1 7.5 Tf
+1 0 0 1 382.0 24 Tm
+(Production Hybrid RAG Engine Blueprint  |  Page 5 of 8) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 736.0 Tm
+(Purpose) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 721.0 Tm
+(Talks directly to Qdrant. It manages collection creation, idempotent upserts \(preventing) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 708.0 Tm
+(duplicate points\), and executes **single-stage multi-tenant payload filtering**.) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 685.0 Tm
+(Key Lines & Why We Wrote Them) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 60.0 512.0 610.0 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 655.0 Tm
+(class QdrantStorage:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 643.5 Tm
+(    def __init__\(self\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 632.0 Tm
+(        # Persistent client connection) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 620.5 Tm
+(        self.client = QdrantClient\(host=settings.qdrant_host, port=settings.qdrant_port\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 609.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 597.5 Tm
+(    def ensure_collection_exists\(self, collection_name: str | None = None\) -> bool:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 586.0 Tm
+(        # Idempotent: checks before creating to avoid 409 Conflict errors) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 574.5 Tm
+(        if self.client.collection_exists\(collection_name=target\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 563.0 Tm
+(            return False) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 551.5 Tm
+(        self.client.create_collection\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 540.0 Tm
+(            collection_name=target,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 528.5 Tm
+(            vectors_config=models.VectorParams\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 517.0 Tm
+(                size=settings.embedding_dim,       # Must match embedder output \(384\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 505.5 Tm
+(                distance=models.Distance.COSINE   # Cosine similarity for semantic search) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 494.0 Tm
+(            \)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 482.5 Tm
+(        \)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 471.0 Tm
+(        return True) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 459.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 448.0 Tm
+(    def upsert_chunks\(self, chunks: list, vectors: list[list[float]], tenant_id: str | None = None\) -> int:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 436.5 Tm
+(        points = []) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 425.0 Tm
+(        for chunk, vector in zip\(chunks, vectors\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 413.5 Tm
+(            # Deterministic UUID5: Same chunk_id always generates the same point UUID!) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 402.0 Tm
+(            point_id = str\(uuid.uuid5\(uuid.NAMESPACE_DNS, chunk.chunk_id\)\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 390.5 Tm
+(            ) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 379.0 Tm
+(            # getattr\(\) ensures compatibility with BOTH SlidingWindow and Markdown chunks) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 367.5 Tm
+(            point = models.PointStruct\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 356.0 Tm
+(                id=point_id,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 344.5 Tm
+(                vector=vector,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 333.0 Tm
+(                payload={) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 321.5 Tm
+(                    "tenant_id": tenant_id, # Tenant tag for zero-leak security) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 310.0 Tm
+(                    "text": chunk.text,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 298.5 Tm
+(                    "header": getattr\(chunk, "header", None\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 287.0 Tm
+(                    "level": getattr\(chunk, "level", None\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 275.5 Tm
+(                    "start_char": getattr\(chunk, "start_char", None\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 264.0 Tm
+(                    "end_char": getattr\(chunk, "end_char", None\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 252.5 Tm
+(                }) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 241.0 Tm
+(            \)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 229.5 Tm
+(            points.append\(point\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 218.0 Tm
+(        self.client.upsert\(collection_name=target, points=points\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 206.5 Tm
+(        return len\(points\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 195.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 183.5 Tm
+(    def search\(self, query_vector: list[float], limit: int = 3, tenant_id: str | None = None\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 172.0 Tm
+(        # ENTERPRISE MULTI-TENANCY:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 160.5 Tm
+(        # Pre-filters data in the vector index so company A CANNOT see company B's vectors) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 149.0 Tm
+(        query_filter = None) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 137.5 Tm
+(        if tenant_id:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 126.0 Tm
+(            query_filter = models.Filter\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 114.5 Tm
+(                must=[) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 103.0 Tm
+(                    models.FieldCondition\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 91.5 Tm
+(                        key="tenant_id",) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 80.0 Tm
+(                        match=models.MatchValue\(value=tenant_id\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 68.5 Tm
+(                    \)) Tj
+ET
+Q
+endstream
+endobj
+17 0 obj
+<< /Type /Page
+/Parent 2 0 R
+/MediaBox [ 0 0 612.0 792.0 ]
+/Contents 18 0 R
+/Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >>
+>>
+endobj
+18 0 obj
+<< /Length 5309 >>
+stream
+q
+0.85 0.88 0.92 RG
+0.5 w
+50.0 757.0 m 562.0 757.0 l S
+50.0 35 m 562.0 35 l S
+Q
+q
+0.5 0.55 0.6 rg
+BT
+/F1 7.5 Tf
+1 0 0 1 50.0 762.0 Tm
+(Master Blueprint: Production Hybrid RAG Engine) Tj
+ET
+BT
+/F1 7.5 Tf
+1 0 0 1 382.0 24 Tm
+(Production Hybrid RAG Engine Blueprint  |  Page 6 of 8) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 615.0 512.0 127.0 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 727.0 Tm
+(                ]) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 715.5 Tm
+(            \)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 704.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 692.5 Tm
+(        results = self.client.query_points\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 681.0 Tm
+(            collection_name=target,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 669.5 Tm
+(            query=query_vector,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 658.0 Tm
+(            query_filter=query_filter,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 646.5 Tm
+(            limit=limit) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 635.0 Tm
+(        \)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 623.5 Tm
+(        return results.points) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 602.0 m
+562.0 602.0 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 584.0 Tm
+(File 7: `app/schemas.py` \(API Contracts / Pydantic Models\)) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 560.0 Tm
+(Purpose) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 545.0 Tm
+(Validates and type-checks all incoming HTTP requests and outgoing HTTP responses. If a client) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 532.0 Tm
+(sends invalid data \(e.g. text that is too short, or a negative limit\), FastAPI rejects it with) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 519.0 Tm
+(a clear 422 error before it touches our database.) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 496.0 Tm
+(Key Lines & Why We Wrote Them) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 112.5 512.0 368.5 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 466.0 Tm
+(class IngestionRequest\(BaseModel\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 454.5 Tm
+(    doc_type: str = "text" # "text" or "markdown") Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 443.0 Tm
+(    document_id: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 431.5 Tm
+(    tenant_id: str = "default_tenant") Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 420.0 Tm
+(    context: str = Field\(..., min_length=10, description='Raw text documents'\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 408.5 Tm
+(    chunk_size: int = Field\(default=300, gt=0\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 397.0 Tm
+(    chunk_overlap: int = Field\(default=40, ge=0\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 385.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 374.0 Tm
+(class IngestionResponse\(BaseModel\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 362.5 Tm
+(    document_id: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 351.0 Tm
+(    tenant_id: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 339.5 Tm
+(    total_chunks: int) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 328.0 Tm
+(    collection: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 316.5 Tm
+(    status: str = "success") Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 305.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 293.5 Tm
+(class search\(BaseModel\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 282.0 Tm
+(    query: str = Field\(..., min_length=2\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 270.5 Tm
+(    tenant_id: str | None = None) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 259.0 Tm
+(    limit: int = Field\(default=3, gt=0, le=20\) # Prevents requesting 10,000 items and crashing server) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 247.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 236.0 Tm
+(class ResultItem\(BaseModel\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 224.5 Tm
+(    id: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 213.0 Tm
+(    score: float) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 201.5 Tm
+(    text: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 190.0 Tm
+(    tenant_id: str | None = None) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 178.5 Tm
+(    header: str | None = None # Breadcrumb header from markdown) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 167.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 155.5 Tm
+(class searchresponse\(BaseModel\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 144.0 Tm
+(    query: str) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 132.5 Tm
+(    total_found: int) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 121.0 Tm
+(    results: list[ResultItem]) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 99.5 m
+562.0 99.5 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 81.5 Tm
+(File 8: `app/main.py` \(The API Orchestrator\)) Tj
+ET
+Q
+endstream
+endobj
+19 0 obj
+<< /Type /Page
+/Parent 2 0 R
+/MediaBox [ 0 0 612.0 792.0 ]
+/Contents 20 0 R
+/Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >>
+>>
+endobj
+20 0 obj
+<< /Length 6116 >>
+stream
+q
+0.85 0.88 0.92 RG
+0.5 w
+50.0 757.0 m 562.0 757.0 l S
+50.0 35 m 562.0 35 l S
+Q
+q
+0.5 0.55 0.6 rg
+BT
+/F1 7.5 Tf
+1 0 0 1 50.0 762.0 Tm
+(Master Blueprint: Production Hybrid RAG Engine) Tj
+ET
+BT
+/F1 7.5 Tf
+1 0 0 1 382.0 24 Tm
+(Production Hybrid RAG Engine Blueprint  |  Page 7 of 8) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 736.0 Tm
+(Purpose) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 721.0 Tm
+(Exposes HTTP REST endpoints. It wires together the request, picks the chunker, converts chunks) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 708.0 Tm
+(to embeddings, saves to Qdrant, and returns formatted responses.) Tj
+ET
+Q
+q
+0.2 0.25 0.35 rg
+BT
+/F2 10.5 Tf
+1 0 0 1 50.0 685.0 Tm
+(Key Lines & Why We Wrote Them) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 60.0 512.0 610.0 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 655.0 Tm
+(# Lifespan: Runs on server boot to ensure DB tables exist before taking requests) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 643.5 Tm
+(@asynccontextmanager) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 632.0 Tm
+(async def lifespan\(app: FastAPI\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 620.5 Tm
+(    storage.ensure_collection_exists\(\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 609.0 Tm
+(    yield) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 597.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 586.0 Tm
+(app = FastAPI\(title="Production Rag Engine", lifespan=lifespan\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 574.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 563.0 Tm
+(# Health Check) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 551.5 Tm
+(@app.get\("/health"\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 540.0 Tm
+(def health_check\(\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 528.5 Tm
+(    return {"status": "healthy", "qdrant_alive": storage.health\(\)}) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 517.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 505.5 Tm
+(# Ingestion Route: Dynamic chunker selection) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 494.0 Tm
+(@app.post\("/api/v1/documents/ingest", status_code=status.HTTP_201_CREATED, response_model=IngestionResponse\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 482.5 Tm
+(def ingest_document\(payload: IngestionRequest\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 471.0 Tm
+(    # 1. Choose Chunker) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 459.5 Tm
+(    if payload.doc_type == "markdown":) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 448.0 Tm
+(        chunker = MarkdownHeaderChunker\(max_chunk_size=payload.chunk_size, chunk_overlap=payload.chunk_overlap) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 436.5 Tm
+(        chunks = chunker.chunk_markdown\(payload.context\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 425.0 Tm
+(    else:) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 413.5 Tm
+(        chunker = SlidingWindowChunker\(chunk_size=payload.chunk_size, chunk_overlap=payload.chunk_overlap\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 402.0 Tm
+(        chunks = chunker.chunk_text\(payload.context\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 390.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 379.0 Tm
+(    # 2. Embed) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 367.5 Tm
+(    texts = [c.text for c in chunks]) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 356.0 Tm
+(    vectors = embedder.embed_chunks\(texts\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 344.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 333.0 Tm
+(    # 3. Store) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 321.5 Tm
+(    total_stored = storage.upsert_chunks\(chunks, vectors, tenant_id=payload.tenant_id\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 310.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 298.5 Tm
+(    # 4. Respond) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 287.0 Tm
+(    return IngestionResponse\() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 275.5 Tm
+(        document_id=payload.document_id,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 264.0 Tm
+(        tenant_id=payload.tenant_id,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 252.5 Tm
+(        total_chunks=total_stored,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 241.0 Tm
+(        collection=settings.collection_name,) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 229.5 Tm
+(        status="success") Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 218.0 Tm
+(    \)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 206.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 195.0 Tm
+(# Search Route) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 183.5 Tm
+(@app.post\("/api/v1/search", response_model=searchresponse\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 172.0 Tm
+(def search_documents\(payload: search\):) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 160.5 Tm
+(    # 1. Embed query into vector) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 149.0 Tm
+(    query_vector = embedder.embed_query\(payload.query\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 137.5 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 126.0 Tm
+(    # 2. Query Qdrant with tenant filter) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 114.5 Tm
+(    raw_results = storage.search\(query_vector=query_vector, limit=payload.limit, tenant_id=payload.tenant_id\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 103.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 91.5 Tm
+(    # 3. Format response) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 80.0 Tm
+(    items = [) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 68.5 Tm
+(        ResultItem\() Tj
+ET
+Q
+endstream
+endobj
+21 0 obj
+<< /Type /Page
+/Parent 2 0 R
+/MediaBox [ 0 0 612.0 792.0 ]
+/Contents 22 0 R
+/Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R /F4 6 0 R >> >>
+>>
+endobj
+22 0 obj
+<< /Length 3864 >>
+stream
+q
+0.85 0.88 0.92 RG
+0.5 w
+50.0 757.0 m 562.0 757.0 l S
+50.0 35 m 562.0 35 l S
+Q
+q
+0.5 0.55 0.6 rg
+BT
+/F1 7.5 Tf
+1 0 0 1 50.0 762.0 Tm
+(Master Blueprint: Production Hybrid RAG Engine) Tj
+ET
+BT
+/F1 7.5 Tf
+1 0 0 1 382.0 24 Tm
+(Production Hybrid RAG Engine Blueprint  |  Page 8 of 8) Tj
+ET
+Q
+q
+0.96 0.965 0.98 rg
+0.82 0.84 0.9 RG
+0.5 w
+50.0 615.0 512.0 127.0 re
+B
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 727.0 Tm
+(            id=str\(pt.id\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 715.5 Tm
+(            score=round\(pt.score, 4\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 704.0 Tm
+(            text=pt.payload.get\("text", ""\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 692.5 Tm
+(            tenant_id=pt.payload.get\("tenant_id"\),) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 681.0 Tm
+(            header=pt.payload.get\("header"\)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 669.5 Tm
+(        \)) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 658.0 Tm
+(        for pt in raw_results) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 646.5 Tm
+(    ]) Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 635.0 Tm
+() Tj
+ET
+Q
+q
+0.15 0.18 0.22 rg
+BT
+/F3 8.0 Tf
+1 0 0 1 58.0 623.5 Tm
+(    return searchresponse\(query=payload.query, total_found=len\(items\), results=items\)) Tj
+ET
+Q
+q
+0.82 0.85 0.9 RG
+0.75 w
+50.0 602.0 m
+562.0 602.0 l
+S
+Q
+q
+0.12 0.35 0.65 rg
+BT
+/F2 13 Tf
+1 0 0 1 50.0 584.0 Tm
+( The 5-Step Replication Checklist for Project #2) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 50.0 566.0 Tm
+(When you open an empty folder for your next project, follow this exact sequence:) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 549.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 549.0 Tm
+(1. **`uv init` & `docker-compose.yml`**: Define your vector DB image and host storage path.) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 532.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 532.0 Tm
+(2. **`config.py`**: Create your `Settings\(BaseSettings\)` class for host, ports, dims, and) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 519.0 Tm
+(collection name.) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 502.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 502.0 Tm
+(3. **`processing/`**:) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 485.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 485.0 Tm
+(Write your `chunker.py` \(Sliding window stride logic\).) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 468.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 468.0 Tm
+(Write your `markdown_chunker.py` \(Buffer & flush by header\).) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 451.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 451.0 Tm
+(Write your `embedder.py` \(Load ONNX model once, `embed_chunks` + `embed_query`\).) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 434.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 434.0 Tm
+(4. **`storage/`**: Write your DB client \(`ensure_collection_exists`, `upsert_chunks` with) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 421.0 Tm
+(UUID5, and `search` with multi-tenant filter\).) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 404.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 404.0 Tm
+(5. **`app/`**:) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 387.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 387.0 Tm
+(Define `schemas.py` with Pydantic request/response models.) Tj
+ET
+Q
+q
+0.2 0.4 0.7 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 52.0 370.0 Tm
+(-) Tj
+ET
+Q
+q
+0.15 0.15 0.18 rg
+BT
+/F1 9.5 Tf
+1 0 0 1 65.0 370.0 Tm
+(Write `main.py` with lifespan startup and the two REST routes \(`/ingest` and `/search`\).) Tj
+ET
+Q
+endstream
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000171 00000 n 
+0000000268 00000 n 
+0000000370 00000 n 
+0000000465 00000 n 
+0000000565 00000 n 
+0000000727 00000 n 
+0000006157 00000 n 
+0000006320 00000 n 
+0000012357 00000 n 
+0000012521 00000 n 
+0000018495 00000 n 
+0000018659 00000 n 
+0000024764 00000 n 
+0000024928 00000 n 
+0000031672 00000 n 
+0000031836 00000 n 
+0000037198 00000 n 
+0000037362 00000 n 
+0000043531 00000 n 
+0000043695 00000 n 
+trailer
+<< /Size 23
+/Root 1 0 R
+>>
+startxref
+47612
+%%EOF
